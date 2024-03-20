@@ -10,6 +10,9 @@ jobs:
   publish:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+
     steps:
       - uses: actions/checkout@v2
       - name: Set up Node.js
@@ -38,7 +41,7 @@ jobs:
       - name: Publish
         uses: softprops/action-gh-release@v1
         with:
-          files: "Flow.Launcher.Plugin.SmartTimestamps.zip"
+          files: "Flow-Launcher-Plugin-SmartTimestamps.zip"
           tag_name: "v${{steps.version.outputs.prop}}"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
