@@ -1,7 +1,7 @@
-name: Publish Release
 permissions:
   contents: write
-  
+
+name: Publish Release
 on:
     workflow_dispatch:
     push:
