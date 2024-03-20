@@ -4,7 +4,7 @@
   "Name": "Smart Timestamps",
   "Description": "Generate smarter timestamps, look up dates, and copy them to your clipboard.",
   "Author": "DustofShadows",
-  "Version": "1.0.0", // This is a test run
+  "Version": "1.0.0",
   "Language": "javascript",
   "Website": "https://github.com/DustofShadows/smart-timestamps-flowlauncher-plugin",
   "ExecuteFileName": "./build/index.js",
