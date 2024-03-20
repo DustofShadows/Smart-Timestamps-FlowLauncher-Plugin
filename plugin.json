@@ -2,7 +2,7 @@
   "ID": "e375c983-bdea-4b5f-9325-ea71e44c1a08",
   "ActionKeyword": "ts",
   "Name": "Smart Timestamps",
-  "Description": "Generate smarter timestamps, look up dates, and copy them to your clipboard. Test",
+  "Description": "Generate smarter timestamps, look up dates, and copy them to your clipboard.",
   "Author": "DustofShadows",
   "Version": "1.0.0",
   "Language": "javascript",
