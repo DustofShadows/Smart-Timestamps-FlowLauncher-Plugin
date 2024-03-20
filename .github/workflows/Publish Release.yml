@@ -37,7 +37,7 @@ jobs:
       - name: Install prod
         run: npm i --production
       - name: Pack
-        run: zip -r Flow.Launcher.Plugin.SmartTimestamps.zip . -x '*.git*'
+        run: zip -r Flow.Launcher.Plugin.SmartTimestamps.zip . -x '*.git*' -x '*.gif'
       - name: Publish
         uses: softprops/action-gh-release@v1
         with:
