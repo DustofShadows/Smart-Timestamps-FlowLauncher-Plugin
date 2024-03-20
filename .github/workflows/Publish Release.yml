@@ -5,8 +5,7 @@ on:
         branches: [main]
         paths-ignore:
             - .github/workflows/*
-            - README.md
-
+            
 jobs:
     publish:
         runs-on: ubuntu-latest
