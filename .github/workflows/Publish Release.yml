@@ -1,44 +1,44 @@
 name: Publish Release
 on:
-    workflow_dispatch:
-    push:
-        branches: [main]
-        paths-ignore:
-            - .github/workflows/*
-            
-jobs:
-    publish:
-        runs-on: ubuntu-latest
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths-ignore:
+      - .github/workflows/*
 
-        steps:
-            - uses: actions/checkout@v2
-            - name: Set up Node.Js
-              uses: actions/setup-node@v2
-              with:
-                  node-version: "19.2.0"
-            - name: get version
-              id: version
-              uses: notiz-dev/github-action-json-property@release
-              with:
-                  path: "plugin.json"
-                  prop_path: "Version"
-            - run: echo ${{steps.version.outputs.prop}}
-            - name: Install and Build
-              run: |
-                  npm ci
-                  npm run build
-            - name: Remove node_modules
-              uses: JesseTG/rm@v1.0.2
-              with:
-                  path: node_modules
-            - name: Install prod
-              run: npm i
-            - name: Pack
-              run: zip -r Flow.Launcher.Plugin.SmartTimestamps.zip . -x '*.git*'
-            - name: Publish
-              uses: softprops/action-gh-release@v1
-              with:
-                  files: "Flow-Launcher-Plugin-SmartTimestamps.zip"
-                  tag_name: "v${{steps.version.outputs.prop}}"
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "20.x"
+      - name: get version
+        id: version
+        uses: notiz-dev/github-action-json-property@release
+        with:
+          path: "plugin.json"
+          prop_path: "Version"
+      - run: echo ${{steps.version.outputs.prop}}
+      - name: Install and Build
+        run: |
+          npm ci
+          npm run build
+      - name: Remove node_modules
+        uses: JesseTG/rm@v1.0.2
+        with:
+          path: node_modules
+      - name: Install prod
+        run: npm i
+      - name: Pack
+        run: zip -r Flow.Launcher.Plugin.SmartTimestamps.zip . -x '*.git*'
+      - name: Publish
+        uses: softprops/action-gh-release@v1
+        with:
+          files: "Flow-Launcher-Plugin-SmartTimestamps.zip"
+          tag_name: "v${{steps.version.outputs.prop}}"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
