@@ -1,7 +1,7 @@
 <h1 align="center">Smart Timestamps for your FlowLauncher</h1>
 
-<p align="center">Generate smart timestamps, look up dates, and copy them to your clipboard, using natural language in the FlowLauncher. <br> 
-  Most copy options will copy plain text (strings) to your clipboard, the last option does provides the date in the UNIX format. <br>
+<p align="center">Generate smart timestamps, look up dates, and copy them to your clipboard using natural language in FlowLauncher. <br>  
+  Most copy options will copy plain text (strings) to your clipboard, the final option provides the date in the UNIX format. <br>
   
 ![Explanatory GIF](Compressed_720p_Smart_Timestamps_GIF24FPS.gif)
 
