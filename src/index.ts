@@ -13,7 +13,7 @@ const copy = (content: string) => childProcess.spawn("clip").stdin.end(content);
 
 type Methods = "copy_result";
 
-const { params, on, showResult, run } = new Flow("app.png");
+const { params, on, showResult, run } = new Flow("icon.png");
 
 on("query", () => {
   let date: dayjs.Dayjs = dayjs();
